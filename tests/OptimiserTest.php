@@ -15,4 +15,13 @@ class OptimiserTest extends TestCase
         $gao = new Optimiser();
         $gao->run();
     }
+
+    /** @test */
+    public function can_load_evaluation_data_after_gao_construction_and_run_optimiser()
+    {
+        $gao = new Optimiser();
+        $gao->loadEvaluationData('anything');
+        $gao->run();
+        $this->addToAssertionCount(1);
+    }
 }

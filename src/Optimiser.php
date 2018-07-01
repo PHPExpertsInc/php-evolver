@@ -19,4 +19,9 @@ class Optimiser
             throw new EvaluationDataException('No data against which to evaluate fitness');
         }
     }
+
+    public function loadEvaluationData($data)
+    {
+        $this->evaluationData = $data;
+    }
 }
