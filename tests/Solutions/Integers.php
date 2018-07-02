@@ -14,4 +14,14 @@ class Integers extends Solution
             ['integer', -1, 1],
         ];
     }
+
+    public function evaluate($data)
+    {
+        $this->fitness = 0;
+        foreach ($data as $weights) {
+            $this->fitness += $this->chromosomes[0] * $weights[0]
+                + $this->chromosomes[1] * $weights[1]
+                + $this->chromosomes[2] * $weights[2];
+        }
+    }
 }

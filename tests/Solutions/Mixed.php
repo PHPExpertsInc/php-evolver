@@ -14,4 +14,9 @@ class Mixed extends Solution
             ['integer', -100, 100],
         ];
     }
+
+    public function evaluate($data)
+    {
+        $this->fitness = (ord($this->chromosomes[0]) + $this->chromosomes[2]) / $this->chromosomes[1];
+    }
 }

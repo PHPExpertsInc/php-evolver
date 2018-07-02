@@ -15,4 +15,9 @@ class Floats extends Solution
             ['float', -1, 1],
         ];
     }
+
+    public function evaluate($data)
+    {
+        //
+    }
 }

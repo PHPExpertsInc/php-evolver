@@ -23,6 +23,19 @@ class Population
         return $this->solutions;
     }
 
+    public function evaluate($data)
+    {
+        collect($this->solutions)->each(function ($solution) use ($data) {
+            $solution->evaluate($data);
+        });
+    }
+
+    public function findBest()
+    {
+        $s = collect($this->solutions);
+        return $s->where('fitness', $s->max('fitness'))->first();
+    }
+
     protected function initialise()
     {
         for ($i = 0; $i < $this->size; $i++) {

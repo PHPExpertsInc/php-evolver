@@ -16,4 +16,9 @@ class Chars extends Solution
 
         return $genome;
     }
+
+    public function evaluate($data)
+    {
+        //
+    }
 }
