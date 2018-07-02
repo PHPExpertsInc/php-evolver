@@ -4,14 +4,21 @@ namespace PeterColes\GAO;
 
 abstract class Solution
 {
+    protected $chromosomes;
+
     abstract public function genome();
 
     public function initialise()
     {
-        return collect($this->genome())->map(function ($chromosome) {
+        $this->chromosomes = collect($this->genome())->map(function ($chromosome) {
             $randomiser = 'random' . ucfirst($chromosome[0]);
             return $this->$randomiser($chromosome);
         })->toArray();
+    }
+
+    public function chromosomes()
+    {
+        return $this->chromosomes;
     }
 
     protected function randomChar($chromosome)
