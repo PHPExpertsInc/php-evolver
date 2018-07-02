@@ -51,4 +51,13 @@ class PopulationTest extends TestCase
         $this->assertEquals([64, -39, 1], $best->chromosomes(), '', 0.0001);
         $this->assertEquals(758, $best->fitness(), '', 0.0001);
     }
+
+    /** @test */
+    public function apply_selection_strategy()
+    {
+        $population = new Population(Integers::class, 12);
+        $selections = $population->select(6);
+
+        $this->assertCount(6, $selections);
+    }
 }
