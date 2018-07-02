@@ -4,7 +4,7 @@ namespace PeterColes\GAO\Tests\Solutions;
 
 use PeterColes\GAO\Solution;
 
-class Textual extends Solution
+class Chars extends Solution
 {
     public function genome()
     {
