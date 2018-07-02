@@ -7,7 +7,6 @@ use PeterColes\GAO\Population;
 use PHPUnit\Framework\TestCase;
 use PeterColes\GAO\Tests\Solutions\Mixed;
 use PeterColes\GAO\Tests\Solutions\Integers;
-use PeterColes\GAO\Exceptions\EvaluationDataException;
 
 class OptimiserTest extends TestCase
 {
@@ -16,14 +15,6 @@ class OptimiserTest extends TestCase
         parent::setUp();
 
         mt_srand(0); // seed random number generator for consistent test results
-    }
-
-    /** @test */
-    public function cannot_run_optimiser_without_evaluation_data()
-    {
-        $this->expectException(EvaluationDataException::class);
-        $gao = new Optimiser();
-        $gao->run();
     }
 
     /** @test */

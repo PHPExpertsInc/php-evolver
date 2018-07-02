@@ -2,8 +2,6 @@
 
 namespace PeterColes\GAO;
 
-use PeterColes\GAO\Exceptions\EvaluationDataException;
-
 class Optimiser
 {
     protected $evaluationData = null;
@@ -17,9 +15,7 @@ class Optimiser
 
     public function run()
     {
-        if (!$this->evaluationData) {
-            throw new EvaluationDataException('No data against which to evaluate fitness');
-        }
+        //
     }
 
     public function loadEvaluationData($data)
