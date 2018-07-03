@@ -6,7 +6,7 @@ abstract class Solution
 {
     protected $chromosomes;
 
-    protected $fitness;
+    public $fitness;
 
     abstract public function genome();
 
@@ -23,11 +23,6 @@ abstract class Solution
     public function chromosomes()
     {
         return $this->chromosomes;
-    }
-
-    public function fitness()
-    {
-        return $this->fitness;
     }
 
     protected function randomChar($chromosome)

@@ -37,7 +37,7 @@ class PopulationTest extends TestCase
         $best = $population->findBest();
 
         $this->assertEquals(['C', 0.5928, 70], $best->chromosomes(), '', 0.0001);
-        $this->assertEquals(231.0892, $best->fitness(), '', 0.0001);
+        $this->assertEquals(231.0892, $best->fitness, '', 0.0001);
     }
 
     /** @test */
@@ -48,16 +48,19 @@ class PopulationTest extends TestCase
         $population->evaluate($evalData);
         $best = $population->findBest();
 
-        $this->assertEquals([64, -39, 1], $best->chromosomes(), '', 0.0001);
-        $this->assertEquals(758, $best->fitness(), '', 0.0001);
+        $this->assertEquals(771, $best->fitness, '', 0.0001);
+        $this->assertEquals([82, -93, 0], $best->chromosomes(), '', 0.0001);
     }
 
     /** @test */
     public function apply_selection_strategy()
     {
         $population = new Population(Integers::class, 12);
+        $evalData = [[2, -1, 90], [3, 0, 85], [1, -2, 82]];
+        $population->evaluate($evalData);
         $selections = $population->select(6);
 
         $this->assertCount(6, $selections);
+        $this->assertEquals([1052, 771, 758, 683, 641, 607], $selections->pluck('fitness')->toArray());
     }
 }
