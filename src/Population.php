@@ -36,6 +36,13 @@ class Population
         return $s->where('fitness', $s->max('fitness'))->first();
     }
 
+    public function nextGeneration()
+    {
+        $selections = $this->select($this->size / 2);
+        $this->crossover($selections);
+        $this->mutate();
+    }
+
     public function select($number)
     {
         return collect($this->solutions)->sortByDesc('fitness')->take($number);
