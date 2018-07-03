@@ -41,6 +41,26 @@ class Population
         return collect($this->solutions)->sortByDesc('fitness')->take($number);
     }
 
+    public function crossover($parents)
+    {
+        $numParents = $parents->count();
+        $familySize = 2 * $this->size / $numParents;
+        $chromosomeCount = sizeof($parents->first()->chromosomes());
+
+        if (is_int($familySize)) {
+            $this->solutions = $parents->shuffle()->chunk(2)->map(function ($parents) use ($familySize, $chromosomeCount) {
+                $children = [];
+                for ($i = 0; $i < $familySize; $i++) {
+                    $crossover = mt_rand(0, $chromosomeCount);
+                    $left = array_slice($parents->first()->chromosomes(), 0, $crossover);
+                    $right = array_slice($parents->last()->chromosomes(), $crossover);
+                    $children[] = new $this->model(['chromosomes' => array_merge($left, $right)]);
+                }
+                return $children;
+            })->flatten();
+        }
+    }
+
     public function mutate()
     {
         $this->solutions = collect($this->solutions)->map(function ($solution) {

@@ -65,6 +65,18 @@ class PopulationTest extends TestCase
     }
 
     /** @test */
+    public function apply_crossover_strategy()
+    {
+        $population = new Population(Integers::class, 12);
+        $selections = collect($population->solutions())->take(6);
+        $this->assertEquals([64, -39, 1], $population->solutions()[0]->chromosomes());
+
+        $population->crossover($selections);
+        $this->assertEquals([82, -93, 0], $population->solutions()[0]->chromosomes());
+        $this->assertEquals([82, -39, 1], $population->solutions()[2]->chromosomes());
+    }
+
+    /** @test */
     public function apply_mutation_strategy()
     {
         $population = new Population(Integers::class, 12);

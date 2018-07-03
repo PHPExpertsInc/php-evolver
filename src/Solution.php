@@ -12,6 +12,15 @@ abstract class Solution
 
     abstract public function evaluate($data);
 
+    public function __construct($params = null)
+    {
+        if ($params) {
+            foreach ($params as $key => $value) {
+                $this->$key = $value;
+            }
+        }
+    }
+
     public function initialise()
     {
         $this->chromosomes = collect($this->genome())->map(function ($definition) {
