@@ -63,4 +63,14 @@ class PopulationTest extends TestCase
         $this->assertCount(6, $selections);
         $this->assertEquals([1052, 771, 758, 683, 641, 607], $selections->pluck('fitness')->toArray());
     }
+
+    /** @test */
+    public function apply_mutation_strategy()
+    {
+        $population = new Population(Integers::class, 12);
+        $this->assertEquals([90, -52, -1], $population->solutions()[5]->chromosomes());
+
+        $population->mutate();
+        $this->assertEquals([90, -83, -1], $population->solutions()[5]->chromosomes());
+    }
 }

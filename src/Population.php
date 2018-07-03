@@ -41,6 +41,16 @@ class Population
         return collect($this->solutions)->sortByDesc('fitness')->take($number);
     }
 
+    public function mutate()
+    {
+        $this->solutions = collect($this->solutions)->map(function ($solution) {
+            if (mt_rand(1, 7) == 1) {
+                $solution->mutate();
+            }
+            return $solution;
+        })->toArray();
+    }
+
     protected function initialise()
     {
         for ($i = 0; $i < $this->size; $i++) {

@@ -14,10 +14,23 @@ abstract class Solution
 
     public function initialise()
     {
-        $this->chromosomes = collect($this->genome())->map(function ($chromosome) {
-            $randomiser = 'random' . ucfirst($chromosome[0]);
-            return $this->$randomiser($chromosome);
+        $this->chromosomes = collect($this->genome())->map(function ($definition) {
+            return $this->chromosome($definition);
         })->toArray();
+    }
+
+    public function chromosome($definition)
+    {
+        $randomiser = 'random' . ucfirst($definition[0]);
+        return $this->$randomiser($definition);
+    }
+
+    public function mutate()
+    {
+        $definition = $this->genome();
+        $chromosomePosition = mt_rand(0, sizeof($definition) - 1);
+        $this->chromosomes[$chromosomePosition] = $this->chromosome($definition[$chromosomePosition]);
+        return $this;
     }
 
     public function chromosomes()
