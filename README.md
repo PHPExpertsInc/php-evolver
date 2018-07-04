@@ -1,6 +1,8 @@
 # Genetic Algorithm Optimiser
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+[Genetic Alorithms](https://en.wikipedia.org/wiki/Genetic_algorithm) are a class of machine learning approaches that use the principles of natural selection, rather than the solving of mathematical formulae to find solutions to optimisation and search type problems. They are especially effective in complex situation that aren't easily "solved" and can often be used as a more-easily understood alternative to neural networks.
+
+This framework takes care of most of the steps (loops) needed when developing and running a genetic algorithm, leaving you needing only to define the shape of your expected solution and a function to evaluate each solution faciliating the comparison of candidate solutions and thus the march towards an optimum. 
 
 ## Installation
 
@@ -12,8 +14,37 @@ composer require petercoles/gao
 
 ## Usage
 
+Firstly create a class that defines a generic solution to the problem to be solved. The class must extend this package's Solution class, which will force the implemetation of two methods: genome() which defines the shape of a valid solution and evaluate(), which will calculate a numerical value that can be used to compare solutions.
+
 ``` php
-to follow ...
+use PeterColes\GAO\Solution;
+
+class MySolution extends Solution
+{
+    public function genome()
+    {
+        return [
+            ['char', 'ABC'],
+            ['float', 0, 1],
+            ['integer', -100, 100],
+        ];
+    }
+
+    public function evaluate($data = null)
+    {
+        $this->fitness = (ord($this->chromosomes[0]) + $this->chromosomes[2]) / $this->chromosomes[1];
+    }
+}
+```
+
+Then instantiate and run the optimiser, creating an initial population of possible solutions to start its evaluation.
+
+```
+$optimiser = new Optimiser(new Population(MySolution::class, 100));
+$optimiser->run();
+foreach ($optimiser->results as $solution) {
+    print_r($solution->summary());
+}
 ```
 
 ### Testing
