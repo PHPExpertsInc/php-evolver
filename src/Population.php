@@ -33,7 +33,7 @@ class Population
     public function findBest()
     {
         $s = collect($this->solutions);
-        return $s->where('fitness', $s->max('fitness'))->first();
+        return $s->where('fitness', $s->min('fitness'))->first();
     }
 
     public function nextGeneration()
@@ -45,7 +45,7 @@ class Population
 
     public function select($number)
     {
-        return collect($this->solutions)->sortByDesc('fitness')->take($number);
+        return collect($this->solutions)->sortBy('fitness')->take($number);
     }
 
     public function crossover($parents)

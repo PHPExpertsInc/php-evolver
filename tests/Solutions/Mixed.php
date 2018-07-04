@@ -17,6 +17,6 @@ class Mixed extends Solution
 
     public function evaluate($data)
     {
-        $this->fitness = (ord($this->chromosomes[0]) + $this->chromosomes[2]) / $this->chromosomes[1];
+        $this->fitness = abs((ord($this->chromosomes[0]) + $this->chromosomes[2]) / $this->chromosomes[1]);
     }
 }

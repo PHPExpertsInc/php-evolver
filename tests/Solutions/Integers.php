@@ -17,11 +17,12 @@ class Integers extends Solution
 
     public function evaluate($data)
     {
-        $this->fitness = 0;
+        $fitness = 0;
         foreach ($data as $weights) {
-            $this->fitness += $this->chromosomes[0] * $weights[0]
+            $fitness += $this->chromosomes[0] * $weights[0]
                 + $this->chromosomes[1] * $weights[1]
                 + $this->chromosomes[2] * $weights[2];
         }
+        $this->fitness = abs($fitness);
     }
 }
