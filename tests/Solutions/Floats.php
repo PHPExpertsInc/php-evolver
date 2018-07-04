@@ -16,8 +16,18 @@ class Floats extends Solution
         ];
     }
 
-    public function evaluate($data)
+    public function evaluate($data = null)
     {
-        //
+        $this->fitness = collect($this->chromosomes)->sum();
+    }
+
+    public function summary()
+    {
+        return (object) [
+            'fitness' => number_format($this->fitness, 3),
+            'chromosomes' => collect($this->chromosomes)->map(function ($chromosome) {
+                return number_format($chromosome, 2);
+            })->toArray(),
+        ];
     }
 }

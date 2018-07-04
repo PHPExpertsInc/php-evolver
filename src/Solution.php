@@ -47,6 +47,11 @@ abstract class Solution
         return $this->chromosomes;
     }
 
+    public function summary()
+    {
+        return (object) ['fitness' => $this->fitness, 'chromosomes' => implode(':', $this->chromosomes)];
+    }
+
     protected function randomChar($chromosome)
     {
         return $chromosome[1][mt_rand(0, strlen($chromosome[1]) - 1)];
