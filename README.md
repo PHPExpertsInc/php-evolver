@@ -56,7 +56,7 @@ Although some use cases may not require much, if any, data against which to eval
 The DataManager class offers utilities optimised to assist with htese challenges. Here's the sort of thing that it can do:
 
 ``` php
-$dm - new DataManager();
+$dm = new DataManager();
 
 // loads all files (assumed to be in CSV format) from given directory into an collection
 $data = $dm->loadCsvDir('path/to/directory');
@@ -74,7 +74,7 @@ list($trainingData, $testingData) = $dm->split($data, 0.2);
 PHP is also rather memory hungry when constructing arrays. If you experience out of memory errors, then the following may help:
 
 ``` php
-$dm->setMemoryLimit('1G');
+$dm->setMemoryLimit('1G'); // increases memory for the current process only, accepts values in M or G e.g. 512M or 2Gs
 ```
 
 ## Testing
