@@ -41,7 +41,7 @@ class DataManager
         ini_set('memory_limit', $limit);
     }
 
-    protected function csvToArray(String $filepath, Bool $headings = false): array
+    public function csvToArray(String $filepath, Bool $headings = false): array
     {
         $rows = array_map('str_getcsv', file($filepath));
 
