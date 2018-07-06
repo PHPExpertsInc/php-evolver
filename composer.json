@@ -1,13 +1,13 @@
 {
     "name": "petercoles/gao",
-    "description": "A Laravel package for performing Genetic Algorithm Optimisation",
+    "description": "PHP framework for performing Genetic Algorithm Optimisation",
     "keywords": [
         "GAO",
         "Genetic Algorithm Optimisation",
         "AI",
         "Artifical Intelligence"
     ],
-    "homepage": "https://github.com/petercoles/laraGAO",
+    "homepage": "https://github.com/petercoles/gao",
     "license": "MIT",
     "authors": [
         {
@@ -18,10 +18,10 @@
         }
     ],
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "tightenco/collect": "^5.6"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.0",
         "phpunit/phpunit": "^7.0"
     },
     "autoload": {
@@ -41,12 +41,5 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "PeterColes\\GAO\\GAOServiceProvider"
-            ]
-        }
     }
 }
