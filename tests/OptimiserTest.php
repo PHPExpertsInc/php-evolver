@@ -21,7 +21,7 @@ class OptimiserTest extends TestCase
     /** @test */
     public function can_load_evaluation_data_during_gao_construction_and_run_optimiser()
     {
-        $gao = new Optimiser(new Population(Mixed::class, 10), ['evaluationData' => 'something', 'model' => Mixed::class]);
+        $gao = new Optimiser(new Population(Mixed::class, 10), ['evaluationData' => 'something']);
         $gao->run();
         $this->addToAssertionCount(1);
     }
