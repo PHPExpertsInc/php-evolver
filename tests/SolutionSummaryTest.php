@@ -25,7 +25,7 @@ class SolutionSummaryTest extends TestCase
         $summary = $solution->summary();
 
         $this->assertEquals(446, $summary->fitness);
-        $this->assertEquals('64:-39:1', $summary->chromosomes);
+        $this->assertEquals([64, -39, 1], $summary->chromosomes);
     }
 
     /** @test */

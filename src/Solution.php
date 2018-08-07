@@ -38,7 +38,9 @@ abstract class Solution
     {
         $definition = $this->genome();
         $chromosomePosition = mt_rand(0, sizeof($definition) - 1);
-        $this->chromosomes[$chromosomePosition] = $this->chromosome($definition[$chromosomePosition]);
+
+        $keys = array_keys($this->chromosomes);
+        $this->chromosomes[$keys[$chromosomePosition]] = $this->chromosome($definition[$keys[$chromosomePosition]]);
         return $this;
     }
 
@@ -49,7 +51,10 @@ abstract class Solution
 
     public function summary()
     {
-        return (object) ['fitness' => $this->fitness, 'chromosomes' => implode(':', $this->chromosomes)];
+        return (object) [
+            'fitness' => $this->fitness,
+            'chromosomes' => $this->chromosomes,
+        ];
     }
 
     protected function randomChar($chromosome)
