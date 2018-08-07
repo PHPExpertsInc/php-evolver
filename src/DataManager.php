@@ -1,6 +1,6 @@
 <?php
 
-namespace PeterColes\GAO;
+namespace PHPExperts\GAO;
 
 use DirectoryIterator;
 use Illuminate\Support\Collection;

@@ -1,19 +1,25 @@
 {
-    "name": "petercoles/gao",
-    "description": "PHP framework for performing Genetic Algorithm Optimisation",
+    "name": "phpexperts/php-evolver",
+    "description": "A generic PHP Genetic Algorithm Framework.",
     "keywords": [
-        "GAO",
-        "Genetic Algorithm Optimisation",
+        "GA",
+        "Genetic Algorithm Framework",
         "AI",
         "Artifical Intelligence"
     ],
-    "homepage": "https://github.com/petercoles/gao",
+    "homepage": "https://github.com/phpexpertsinc/php-evolver",
     "license": "MIT",
     "authors": [
         {
             "name": "Peter Coles",
             "email": "peterdcoles@gmail.com",
             "homepage": "https://petercoles.com",
+            "role": "Creator"
+        },
+        {
+            "name": "Theodore R. Smith",
+            "email": "theodore@phpexperts.pro",
+            "homepage": "https://www.phpexperts.pro/",
             "role": "Developer"
         }
     ],
@@ -26,12 +32,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PeterColes\\GAO\\": "src"
+            "PHPExperts\\GAO\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PeterColes\\GAO\\Tests\\": "tests"
+            "PHPExperts\\GAO\\Tests\\": "tests"
         }
     },
     "scripts": {

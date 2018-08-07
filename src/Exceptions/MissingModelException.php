@@ -1,6 +1,6 @@
 <?php
 
-namespace PeterColes\GAO\Exceptions;
+namespace PHPExperts\GAO\Exceptions;
 
 use RuntimeException;
 

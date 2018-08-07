@@ -1,4 +1,4 @@
-# Genetic Algorithm Optimiser
+# PHP Evolver: A Genetic Algorithm Framework
 
 [Genetic Alorithms](https://en.wikipedia.org/wiki/Genetic_algorithm) are a class of machine learning approaches that use the principles of natural selection, rather than the solving of mathematical formulae to find solutions to optimisation and search type problems. They are especially effective in complex situation that aren't easily "solved" and can often be used as a more-easily understood alternative to neural networks.
 
@@ -9,7 +9,7 @@ This framework takes care of most of the steps (loops) needed when developing an
 You can install the package via composer:
 
 ```bash
-composer require petercoles/gao
+composer require phpexperts/php-evolver
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ composer require petercoles/gao
 Firstly create a class that defines a generic solution to the problem to be solved. The class must extend this package's Solution class, which will force the implemetation of two methods: genome() which defines the shape of a valid solution and evaluate(), which will calculate a numerical value that can be used to compare solutions.
 
 ``` php
-use PeterColes\GAO\Solution;
+use PHPExperts\GAO\Solution;
 
 class MySolution extends Solution
 {
@@ -97,6 +97,9 @@ If you discover any security related issues, please email peterdcoles@gmail.com 
 
 ## Credits
 
+Forked from https://github.com/ptercoles/genetic-algorithm-optimiser
+
+- [Theodore R. Smith](https://github.com/hopeseekr)
 - [Peter Coles](https://github.com/petercoles)
 - [All Contributors](../../contributors)
 

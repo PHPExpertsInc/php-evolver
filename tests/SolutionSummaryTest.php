@@ -1,10 +1,10 @@
 <?php
 
-namespace PeterColes\GAO\Tests;
+namespace PHPExperts\GAO\Tests;
 
 use PHPUnit\Framework\TestCase;
-use PeterColes\GAO\Tests\Solutions\Floats;
-use PeterColes\GAO\Tests\Solutions\Integers;
+use PHPExperts\GAO\Tests\Solutions\Floats;
+use PHPExperts\GAO\Tests\Solutions\Integers;
 
 class SolutionSummaryTest extends TestCase
 {

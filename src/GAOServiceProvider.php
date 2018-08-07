@@ -1,6 +1,6 @@
 <?php
 
-namespace PeterColes\GAO;
+namespace PHPExperts\GAO;
 
 use Illuminate\Support\ServiceProvider;
 

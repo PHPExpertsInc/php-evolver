@@ -1,11 +1,11 @@
 <?php
 
-namespace PeterColes\GAO\Tests;
+namespace PHPExperts\GAO\Tests;
 
-use PeterColes\GAO\Optimiser;
-use PeterColes\GAO\Population;
+use PHPExperts\GAO\Optimiser;
+use PHPExperts\GAO\Population;
 use PHPUnit\Framework\TestCase;
-use PeterColes\GAO\Tests\Solutions\Mixed;
+use PHPExperts\GAO\Tests\Solutions\Mixed;
 
 class OptimiserTest extends TestCase
 {

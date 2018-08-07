@@ -1,8 +1,8 @@
 <?php
 
-namespace PeterColes\GAO\Tests\Solutions;
+namespace PHPExperts\GAO\Tests\Solutions;
 
-use PeterColes\GAO\Solution;
+use PHPExperts\GAO\Solution;
 
 class Mixed extends Solution
 {
