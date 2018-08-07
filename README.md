@@ -27,13 +27,14 @@ class MySolution extends Solution
     {
         return [
             ['char', 'ABC'],
-            ['float', 0, 1],
+            ['float', 0, 1], // upper and lower bounds
             ['integer', -100, 100],
         ];
     }
 
     public function evaluate($data = null)
     {
+        // The smaller the fitness value, the better.
         $this->fitness = (ord($this->chromosomes[0]) + $this->chromosomes[2]) / $this->chromosomes[1];
     }
 }
