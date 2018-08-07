@@ -43,7 +43,7 @@ class MySolution extends Solution
 Then instantiate and run the optimiser, creating an initial population of possible solutions to start its evaluation.
 
 ``` php
-$optimiser = new Optimiser(new Population(MySolution::class, 100));
+$optimiser = new Breeder(new Population(MySolution::class, 100));
 $optimiser->run();
 foreach ($optimiser->results as $solution) {
     print_r($solution->summary());

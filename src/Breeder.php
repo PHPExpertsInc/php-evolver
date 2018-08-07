@@ -2,7 +2,7 @@
 
 namespace PHPExperts\GAO;
 
-class Optimiser
+class Breeder
 {
     protected $population;
 
