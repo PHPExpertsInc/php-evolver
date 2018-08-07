@@ -21,8 +21,16 @@ class Optimiser
         });
     }
 
-    public function run()
+    public function run(callable $exitCondition = null)
     {
+        static $numOfGenerations = 0;
+        if (!$exitCondition) {
+            // Never exit early by default.
+            $exitCondition = function ($bestEntity) {
+                return false;
+            };
+        }
+
         for ($generation = 0; $generation < $this->maxGenerations; $generation++) {
             if ($generation > 0) {
                 $this->population->nextGeneration();
@@ -30,7 +38,14 @@ class Optimiser
 
             $this->population->evaluate($this->evaluationData);
 
-            $this->results[] = $this->population->findBest();
+            $bestEntity = $this->population->findBest();
+            $this->results[] = $bestEntity;
+
+            ++$numOfGenerations;
+
+            if ($exitCondition($bestEntity)) {
+                break;
+            }
         }
     }
 

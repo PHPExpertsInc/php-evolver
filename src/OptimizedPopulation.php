@@ -23,10 +23,10 @@ class Population
         return $this->solutions;
     }
 
-    public function evaluate($data, callable $exitCondition = null)
+    public function evaluate($data)
     {
-        collect($this->solutions)->each(function ($solution) use ($data, $exitCondition) {
-            $solution->evaluate($data, $exitCondition);
+        collect($this->solutions)->each(function ($solution) use ($data) {
+            $solution->evaluate($data);
         });
     }
 
