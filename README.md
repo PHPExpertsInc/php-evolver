@@ -1,6 +1,6 @@
 # PHP Evolver: A Genetic Algorithm Framework
 
-[Genetic Alorithms](https://en.wikipedia.org/wiki/Genetic_algorithm) are a class of machine learning approaches that use the principles of natural selection, rather than the solving of mathematical formulae to find solutions to optimisation and search type problems. They are especially effective in complex situation that aren't easily "solved" and can often be used as a more-easily understood alternative to neural networks.
+[Genetic Algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm) are a class of machine learning approaches that use the principles of natural selection, rather than the solving of mathematical formulae to find solutions to optimisation and search type problems. They are especially effective in complex situation that aren't easily "solved" and can often be used as a more-easily understood alternative to neural networks.
 
 This framework takes care of most of the steps (loops) needed when developing and running a genetic algorithm, leaving you needing only to define the shape of your expected solution and a function to evaluate each candidate faciliating their comparison and thus the march towards an optimum. 
 
