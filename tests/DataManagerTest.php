@@ -11,12 +11,12 @@ class DataManagerTest extends TestCase
 
     protected $racesFile = __DIR__ . '/data/races.json';
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->dm = new DataManager();
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
         if (file_exists($this->racesFile)) {
             unlink($this->racesFile);

@@ -9,7 +9,7 @@ use PHPExperts\GAO\Tests\Solutions\Integers;
 
 class PopulationTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -36,8 +36,8 @@ class PopulationTest extends TestCase
         $population->evaluate(null);
         $best = $population->findBest();
 
-        $this->assertEquals(['B', 0.8473, -57], $best->chromosomes(), '', 0.0001);
-        $this->assertEquals(10.6226, $best->fitness, '', 0.0001);
+        $this->assertEqualsWithDelta(['B', 0.8473, -57], $best->chromosomes(), 0.0001);
+        $this->assertEqualsWithDelta(10.6226, $best->fitness, 0.0001);
     }
 
     /** @test */
@@ -48,8 +48,8 @@ class PopulationTest extends TestCase
         $population->evaluate($evalData);
         $best = $population->findBest();
 
-        $this->assertEquals(7, $best->fitness, '', 0.0001);
-        $this->assertEquals([42, -4, -1], $best->chromosomes(), '', 0.0001);
+        $this->assertEqualsWithDelta(7, $best->fitness, 0.0001);
+        $this->assertEqualsWithDelta([42, -4, -1], $best->chromosomes(), 0.0001);
     }
 
     /** @test */
