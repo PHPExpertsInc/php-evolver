@@ -4,7 +4,7 @@ namespace PHPExperts\GAO\Tests\Solutions;
 
 use PHPExperts\GAO\Solution;
 
-class Mixed extends Solution
+class MixedVars extends Solution
 {
     public function genome()
     {

@@ -4,18 +4,14 @@ namespace PHPExperts\GAO;
 
 class Breeder
 {
-    protected $population;
-
     protected $evaluationData = null;
 
     protected $maxGenerations = 10;
 
     public $results = [];
 
-    public function __construct($population, $params = [])
+    public function __construct(protected $population, $params = [])
     {
-        $this->population = $population;
-
         collect($params)->each(function ($value, $key) {
             $this->$key = $value;
         });
@@ -26,9 +22,7 @@ class Breeder
         static $numOfGenerations = 0;
         if (!$exitCondition) {
             // Never exit early by default.
-            $exitCondition = function ($bestEntity) {
-                return false;
-            };
+            $exitCondition = (fn($bestEntity) => false);
         }
 
         for ($generation = 0; $generation < $this->maxGenerations; $generation++) {

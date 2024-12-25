@@ -21,9 +21,7 @@ class DataManager
 
     public function split(Collection $data, Float $testDataRatio): Collection
     {
-        return $data->partition(function () use ($testDataRatio) {
-            return mt_rand() / mt_getrandmax() > $testDataRatio;
-        });
+        return $data->partition(fn() => mt_rand() / mt_getrandmax() > $testDataRatio);
     }
 
     public function save(String $outFile, Collection $contents)

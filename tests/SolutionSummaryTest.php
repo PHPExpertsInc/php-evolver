@@ -8,7 +8,7 @@ use PHPExperts\GAO\Tests\Solutions\Integers;
 
 class SolutionSummaryTest extends TestCase
 {
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
