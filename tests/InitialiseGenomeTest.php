@@ -3,7 +3,7 @@
 namespace PHPExperts\GAO\Tests;
 
 use PHPUnit\Framework\TestCase;
-use PHPExperts\GAO\Tests\Solutions\Mixed;
+use PHPExperts\GAO\Tests\Solutions\MixedVars;
 use PHPExperts\GAO\Tests\Solutions\Chars;
 use PHPExperts\GAO\Tests\Solutions\Floats;
 use PHPExperts\GAO\Tests\Solutions\Integers;
@@ -50,7 +50,7 @@ class InitialiseGenomeTest extends TestCase
     /** @test */
     public function can_intialise_genome_with_mixed_chromosome_types()
     {
-        $solution = new Mixed();
+        $solution = new MixedVars();
         $solution->initialise();
 
         $this->assertEquals(3, sizeof($solution->chromosomes()));

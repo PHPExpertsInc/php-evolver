@@ -4,7 +4,7 @@ namespace PHPExperts\GAO\Tests;
 
 use PHPExperts\GAO\Population;
 use PHPUnit\Framework\TestCase;
-use PHPExperts\GAO\Tests\Solutions\Mixed;
+use PHPExperts\GAO\Tests\Solutions\MixedVars;
 use PHPExperts\GAO\Tests\Solutions\Integers;
 
 class PopulationTest extends TestCase
@@ -32,7 +32,7 @@ class PopulationTest extends TestCase
     /** @test */
     public function can_evaluate_a_population_without_evaluation_data()
     {
-        $population = new Population(Mixed::class, 3);
+        $population = new Population(MixedVars::class, 3);
         $population->evaluate(null);
         $best = $population->findBest();
 
