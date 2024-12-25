@@ -6,14 +6,11 @@ class Population
 {
     protected $size;
 
-    protected $model;
-
     protected $solutions = [];
 
-    public function __construct($model, int $size)
+    public function __construct(protected $model, int $size)
     {
         $this->size = $size;
-        $this->model = $model;
 
         $this->initialise();
     }

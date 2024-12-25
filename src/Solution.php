@@ -23,14 +23,12 @@ abstract class Solution
 
     public function initialise()
     {
-        $this->chromosomes = collect($this->genome())->map(function ($definition) {
-            return $this->chromosome($definition);
-        })->toArray();
+        $this->chromosomes = collect($this->genome())->map(fn($definition) => $this->chromosome($definition))->toArray();
     }
 
     public function chromosome($definition)
     {
-        $randomiser = 'random' . ucfirst($definition[0]);
+        $randomiser = 'random' . ucfirst((string) $definition[0]);
         return $this->$randomiser($definition);
     }
 
@@ -59,7 +57,7 @@ abstract class Solution
 
     protected function randomChar($chromosome)
     {
-        return $chromosome[1][mt_rand(0, strlen($chromosome[1]) - 1)];
+        return $chromosome[1][mt_rand(0, strlen((string) $chromosome[1]) - 1)];
     }
 
     protected function randomInteger($chromosome)

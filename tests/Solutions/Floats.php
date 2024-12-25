@@ -25,9 +25,7 @@ class Floats extends Solution
     {
         return (object) [
             'fitness' => number_format($this->fitness, 3),
-            'chromosomes' => collect($this->chromosomes)->map(function ($chromosome) {
-                return number_format($chromosome, 2);
-            })->toArray(),
+            'chromosomes' => collect($this->chromosomes)->map(fn($chromosome) => number_format($chromosome, 2))->toArray(),
         ];
     }
 }
