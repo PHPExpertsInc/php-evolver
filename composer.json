@@ -24,8 +24,8 @@
         }
     ],
     "require": {
-        "php": ">=7.2 <8.0 || >=8.0 <8.3",
-        "tightenco/collect": "8.16.*"
+        "php": ">=8.1",
+        "tightenco/collect": "8.*"
     },
     "require-dev": {
         "phpexperts/dockerize": "^12.0",
